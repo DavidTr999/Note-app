@@ -1,10 +1,12 @@
 package com.techmania.noteapp.View
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.techmania.gradletest.R
 
@@ -34,15 +36,12 @@ class NoteAddActivity : AppCompatActivity() {
         buttonSave.setOnClickListener {
 
             if (editTextTitle.text.toString() == "" && editTextDescription.text.toString() == ""){
-
                 Toast.makeText(applicationContext,"Nothing saved", Toast.LENGTH_SHORT).show()
                 finish()
-
-            }else{
+            }
+            else{
                 saveNote()
             }
-
-
 
         }
     }
@@ -51,6 +50,8 @@ class NoteAddActivity : AppCompatActivity() {
 
         val noteTitle : String = editTextTitle.text.toString()
         val noteDescription : String = editTextDescription.text.toString()
+
+
 
         val intent = Intent()
         intent.putExtra("title", noteTitle)
